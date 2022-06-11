@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Assignment 1</title>
+        <script type="text/javascript">
+        function load() {
+            var data = [];
+            while(true){
+                var line = prompt("Enter course name, grade and hours (ie CS351 B+ 3), or click ok with no data to finish.");
+                if (line == null || line == " ") {
+                    break;
+                }
+                var values = line.split(/\s/);
+                var course = values[0];
+                var grade = values[1];
+                var hours = parseInt(values[2]);
+                var point = toPoint(grade);
+                var item = [course, grade, hours, point];
+                
+                data.push(item);
+            }
+            return data;
+        }
+            
+        function toPoint(grades) {
+            if (grades == 'A+') {
+                return 4;
+            }
+            if (grades == 'A') {
+                return 4;
+            }
+            if (grades == 'A-') {
+                return 3.7;
+            }
+            if (grades == 'B+') {
+                return 3.3;
+            }
+            if (grades == 'B') {
+                return 3;
+            }
+            if (grades == 'B-') {
+                return 2.7;
+            }
+            if (grades == 'C+') {
+                return 2.3;
+            }
+            if (grades == 'C') {
+                return 2;
+            }
+            if (grades == 'C-') {
+                return 1.7;
+            }
+            if (grades == 'D+') {
+                return 1.3;
+            }
+            if (grades == 'D') {
+                return 1;
+            }
+            if (grades == 'F') {
+                return 0;
+            }
+            
+            return 0;
+            
+        }
+        
+        function display(data) {
+            var table = document.getElementById("result");
+            table.innerHTML = "<tr><th>COURSE</th><th>GRADE</th><th>HOURS</th></tr>";
+            var totalHours = 0;
+            var totalPoints = 0;
+            
+            for(var i in data) {
+                var item = data[i];
+                table.innerHTML += "<tr><td>" +item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td></tr>";
+                
+                totalHours += item[2];
+                totalPoints += item[3] * item[2];
+                
+            }
+            
+            var gpa = 0;
+            if (totalHours > 0) {
+                gpa = totalPoints / totalHours;
+            }
+
+        var text = "<br>Total grade points = " + totalPoints + "<br>" + "Number of hours = " + totalHours + "<br>" + "GPA = " + gpa;
+        document.getElementById("text").innerHTML = text;
+            
+            
+        }
+        
+        
+        
+        </script>
+        
+    </head>
+
+    <body>
+        <table id="result" border="1px">
+        
+        
+        </table>
+        <span id="text"> </span>
+        
+        <script type="text/javascript">
+            data = load();
+            display(data);
+        </script>
+        
+    </body>
+
+</html>
