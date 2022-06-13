@@ -17,6 +17,11 @@
             function scramblePokemon(pokemonName) {
 
                 let pokemonScramble = pokemonName.split('').sort(function(){return 0.5-Math.random()}).join('');
+
+                if (pokemonName == pokemonScramble) {
+                    pokemonScramble = scramblePokemon(pokemonName);
+                }
+                
                 return pokemonScramble;
                 
             }
