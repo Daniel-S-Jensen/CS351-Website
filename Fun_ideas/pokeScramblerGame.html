@@ -26,18 +26,24 @@
             }
 
             function display(pokemonName, pokemonScramble) {
-                var table = document.getElementById("result");
-                table.innerHTML = "<tr><th>SCRAMBLED TEXT</th><th>POKEMON SOLUTION</th></tr>";
-                
-                table.innerHTML += "<tr><td>" + pokemonScramble + "</td><td>" + pokemonName + "</td></tr>"
-                        
+                var h2 = document.getElementById("scrambled");
+                h2.innerHTML = pokemonScramble;
             }
 
-            function onButtonPress() {
+            function newScramble() {
                 var pokemonName = newPokemon();
                 var pokemonScramble = scramblePokemon(pokemonName);
                 
                 display(pokemonName, pokemonScramble);
+            }
+
+            function checkAnswer() {
+                var userGuess = document.getElementById("guess");
+                userGuess
+            }
+
+            function revealAnswer() {
+
             }
 
 
@@ -46,19 +52,17 @@
 
     <body>
 
-        <table id="result" border="1px">
-            <tr>
-                <th>SCRAMBLED TEXT</th>
-                <th>POKEMON SOLUTION</th>
-            </tr>
-            <tr>
-                <td> </td>
-                <td> </td>
-            </tr>
-
-        </table>
+        <h2 id="scrambled"> </h2>
         
-        <button type="button" onclick="onButtonPress()">Scramble Pokemon</button>
+        <br>
+        <label for="guessLabel">Pokemon Name:</label>
+        <input type="text" id="guess" name="guess">
+        <br>
+        <span id="isCorrect"> </span>
+        <button type="buton" onclick="checkAnswer()">Check Answer</button>
+        <br>
+        <button type="button" onclick="newScramble()">Scramble Pokemon</button>
+        <button type="button" onclick="revealAnswer()">Show Solution</button>
         
     </body>
 
