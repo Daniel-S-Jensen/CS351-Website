@@ -4,6 +4,7 @@
     <head>
         <title>Assignment 2 - GPA</title>
         <script type="text/javascript" src="gpa.js"> </script>
+        <link rel="stylesheet" href="gpa.css"/>
         
     </head>
 
@@ -11,35 +12,14 @@
         <h1>GPA Calculator</h1>
         
         <form>
-            <textarea id="grades" name="grades" placeholder="CS351 B+ 3" wrap="soft" required="required" rows="4" cols="50"></textarea><br>
+            <textarea id="grades" name="grades" placeholder="Enter grades in the format: course name, grade and hours (ie CS351 B+ 3). Put each class on a seperate line." wrap="soft" required="required" rows="4" cols="50"></textarea><br>
             <button type="button" onclick="onButtonPress()">Calculate GPA</button>
         </form><br>
 
-
-        <label>Total # of grade points:<input type="text" id="numGradePts" readonly="true"></label><br>
-        <label>Total # of credit hours:<input type="text" id="numCredHours" readonly="readonly"></label><br>
-        <label>Grade Point Average:<input type="text" id="GPA" readonly="readonly"></label><br>
         
-        <span id="text1"> </span>
-        <br>
-        <span id="text2"> </span>
-        <br>
-        <span id="text3"> </span>
-        <br>
-        <span id="text4"> </span>
-        <br>
-        <span id="text5"> </span>
-        <br>
-        <span id="text6"> </span>
-        <br>
-        <span id="text7"> </span>
-        <br>
-        <span id="text8"> </span>
-        <br>
-        <span id="text9"> </span>
-        <br>
-        <span id="text10"> </span>
-        
+        <label class="Label">Total # of grade points: <input class="outPut" type="text" id="numGradePts" readonly="true"></label><br>
+        <label class="Label">Total # of credit hours: <input class="outPut" type="text" id="numCredHours" readonly="readonly"></label><br>
+        <label class="Label">Grade Point Average: <input class="outPut" type="text" id="GPA" readonly="readonly"></label><br>  
         
     </body>
 
