@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Assignment 2 - GPA</title>
+        <script type="text/javascript" src="gpa.js"> </script>
+        <link rel="stylesheet" href="gpa.css"/>
+        
+    </head>
+
+    <body>
+        <h1>GPA Calculator</h1>
+        
+        <form>
+            <textarea id="grades" name="grades" placeholder="Enter grades in the format: course name, grade and hours (ie CS351 B+ 3). Put each class on a seperate line." wrap="soft" required="required" rows="4" cols="50"></textarea><br>
+            <button type="button" onclick="onButtonPress()">Calculate GPA</button>
+        </form><br>
+
+        
+        <label class="Label">Total # of grade points: <input class="outPut" type="text" id="numGradePts" readonly="true"></label><br>
+        <label class="Label">Total # of credit hours: <input class="outPut" type="text" id="numCredHours" readonly="readonly"></label><br>
+        <label class="Label">Grade Point Average: <input class="outPut" type="text" id="GPA" readonly="readonly"></label><br>  
+        
+    </body>
+
+</html>

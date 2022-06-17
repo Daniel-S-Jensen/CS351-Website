@@ -2,40 +2,21 @@
 <html>
     <head>
         <title>Assignment 2 - Pirate</title>
-        <script type="text/javascript">
-            PHRASES = [["hello", "ahoy"], ["hi", "yo-ho-ho"], ["pardon me", "avast"], ["excuse me", "arrr"], ["my", "me"], ["friend", "me bucko"], ["sir", "matey"], ["madam", "proud beauty"], ["miss", "comely wench"], ["stranger", "scurvy dog"], ["officer", "foul blaggart"], ["where", "whar"], ["is", "be"], ["the", "th'"], ["you", "ye"], ["tell", "be tellin'"], ["know", "be knowin'"], ["how far", "how many leagues"], ["old", "barnacle-covered"], ["attractive", "comely"], ["happy", "grog-filled"], ["nearby", "broadside"], ["restroom", "head"], ["restaurant", "galley"], ["hotel", "fleabag inn"], ["pub", "Skull & Scuppers"], ["bank", "buried trasure"]];
-
-            //returns a copy of str with the first letter capitalized
-            function capitalize(str) {
-                return str.charAt(0).toUpperCase() + str.substring(1);
-            }
-
-            //returns a copy of text with English phrases replaces by piratey equivalents
-            function translate(text) {
-                for (var i = 0; i < PHRASES.length; i++) {
-                    var toReplace = new RegExp("\\b"+PHRASES[i][0]+"\\b", "i");
-                    var index = text.search(toReplace);
-                    while (index != -1) {
-                        if (text.charAt(index) >= "A" && text.charAt(index) <= "Z") {
-                            text = text.replace(toReplace, capitalize(PHRASES[i][1]));
-                        }
-                        else {
-                            text = texdt.replace(toReplace, PHRASES[i][1]);
-                        }
-                    }
-                }
-                return text;
-            }
-        </script>
+        <script type="text/javascript" src="pirate.js"> </script>
+        <link rel="stylesheet" href="pirate.css" />
 
     </head>
 
     <body>
-        
+        <h1>Talk Like a Pirate Translator</h1>
+        <div id="formArea">
+            <form>
+                <textarea id="english" name="english" placeholder="Insert English text here"></textarea><br><br>
+                <button id="clickMe" type="button" onclick="onButtonPress()">Translate</button><br><br>
+                <textarea id="pirate" name="pirate" placeholder="Pirate text will appear here"></textarea>
 
-
-
-
+            </form>
+        </div>
     </body>
 
 
